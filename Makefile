@@ -11,3 +11,6 @@ migrate-down:
 
 migrate_file:
 	migrate create -ext sql -dir migrations/ -seq table
+
+migrate-dirty:
+	migrate -path ./migrations/ -database "postgresql://postgres:1234@localhost:5432/backend?sslmode=disable" force 1
